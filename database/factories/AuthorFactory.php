@@ -2,8 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Author;
-use App\Models\Manga;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 final class AuthorFactory extends Factory

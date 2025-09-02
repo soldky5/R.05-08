@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('year_of_birth');
-            $table->integer('year_of_death');
+            $table->integer('year_of_death')->nullable();
             $table->text('biography');
             $table->timestamps();
         });
