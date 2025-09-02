@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('mangas', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('title');
+            $table->integer('start_year');
+            $table->integer('end_year');
+            $table->integer('volume_number');
             $table->foreignId('author_id')->references('id')->on('authors')->onDelete('cascade');
             $table->timestamps();
         });

@@ -12,9 +12,13 @@ final class Manga extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'is_shared',
+        'title',
+        'start_year',
+        'end_year',
+        'volume_number',
+        'author_id',
     ];
+
 
     /**
      * @return HasOne<Author, $this>

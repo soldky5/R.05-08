@@ -12,7 +12,9 @@ final class Author extends Model
 
     protected $fillable = [
         'name',
-        'is_shared',
+        'year_of_birth',
+        'year_of_death',
+        'biography'
     ];
 
     /**
