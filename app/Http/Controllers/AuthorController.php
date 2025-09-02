@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-abstract class Controller
+final class AuthorController
 {
-    //
 }
