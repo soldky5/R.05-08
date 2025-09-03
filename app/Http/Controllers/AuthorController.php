@@ -11,6 +11,7 @@ final class AuthorController
     public function index(): JsonResponse
     {
         $authors = Author::select()->get();
+        // TODO
 
         return response()->json(AuthorRessource::collection($authors), 200);
     }
