@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Author;
 use App\Models\Manga;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 final class MangaFactory extends Factory
 {
@@ -16,10 +17,10 @@ final class MangaFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name(),
+            'title' => Str::random(10),
             'start_year' => date('Y') - 1,
             'end_year' => date('Y'),
-            'volume_number' => $this->faker->random_int(1, 10),
+            'volume_number' => $this->faker->randomNumber(1),
             'author_id' => null
         ];
     }
