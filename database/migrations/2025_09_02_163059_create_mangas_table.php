@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->integer('start_year');
-            $table->integer('end_year');
+            $table->integer('end_year')->nullable();
             $table->integer('volume_number');
             $table->foreignId('author_id')->references('id')->on('authors')->onDelete('cascade');
             $table->timestamps();
