@@ -23,3 +23,12 @@ cp .env.example .env.testing
 ```
 php artisan test
 ```
+
+### Dusk
+```
+# Run server
+php artisan serve --port=8000
+
+# Run tests
+php artisan dusk
+```
