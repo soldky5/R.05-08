@@ -14,6 +14,7 @@ final class AuthorController
         $authors = Author::when($request->has('name'), function ($query) use ($request) {
             $query->where('name', $request->string('name'));
         })
+            ->orderBy('name', 'asc')
             ->get();
 
         return response()->json(AuthorRessource::collection($authors), 200);

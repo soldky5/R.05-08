@@ -72,7 +72,19 @@ class IndexAuthorTest extends TestCase
     
     public function test_list_author_with_sort(): void
     {
-        // TODO
-        $this->assertTrue(true);
+        $author = Author::factory()->create([
+            'name' => 'b'
+        ]);
+        $author2 = Author::factory()->create([
+            'name' => 'a'
+        ]);
+
+        $response = $this->getJson(route('authors.index'));
+        $response->assertOk();
+        $response->assertJson([[
+            'id' => $author2->id,
+        ], [
+            'id' => $author->id,
+        ]]);
     }
 }
