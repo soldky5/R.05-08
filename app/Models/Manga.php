@@ -18,7 +18,6 @@ final class Manga extends Model
         'author_id',
     ];
 
-
     /**
      * @return BelongsTo<Author, $this>
      */

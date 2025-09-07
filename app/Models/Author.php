@@ -25,6 +25,7 @@ final class Author extends Model
         return $this->hasMany(Manga::class);
     }
 
+    // TODO 9 : Correction
     public function addManga(array $manga): void
     {
         $manga['author_id'] = $this->id;

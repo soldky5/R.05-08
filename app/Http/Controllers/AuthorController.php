@@ -13,9 +13,12 @@ final class AuthorController
 {
     public function index(IndexAuthorRequest $request): JsonResponse
     {
-        $authors = Author::when($request->has('name'), function ($query) use ($request) {
-            $query->where('name', $request->string('name'));
-        })
+        $authors = Author::select()
+            // TODO 2 : Correction
+            ->when($request->has('name'), function ($query) use ($request) {
+                $query->where('name', $request->string('name'));
+            })
+            // TODO 6 : Correction
             ->orderBy('name', 'asc')
             ->get();
 

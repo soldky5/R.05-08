@@ -22,6 +22,7 @@ final class AuthorRessource extends JsonResource
             'year_of_birth' => (int) $this->year_of_birth,
             'year_of_death' => (int) $this->year_of_death,
             'biography' => (string) $this->biography,
+            // TODO 4 : Correction
             'mangas' => MangaRessource::collection($this->mangas)
         ];
     }

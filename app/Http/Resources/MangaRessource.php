@@ -6,6 +6,7 @@ use App\Models\Manga;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
+// TODO 4 : Correction
 /**
  * @mixin Manga
  */

@@ -18,8 +18,8 @@ final class MangaFactory extends Factory
     {
         return [
             'title' => Str::random(10),
-            'start_year' => date('Y') - 1,
-            'end_year' => date('Y'),
+            'start_year' => (int) date('Y') - 1,
+            'end_year' => (int) date('Y'),
             'volume_number' => $this->faker->randomNumber(1),
             'author_id' => null
         ];

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Unit;
 
 use App\Models\Author;
 use App\Models\Manga;
@@ -13,6 +13,7 @@ class CascadeDeleteMangasTest extends TestCase
 
     public function test_manga_cascade_delete(): void
     {
+        // TODO 8 : Correction
         $author = Author::factory()->create();
         $manga = Manga::factory()->create([
             'author_id' => $author->id
