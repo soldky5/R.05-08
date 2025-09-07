@@ -5,7 +5,6 @@ namespace App\Http\Resources;
 use App\Models\Author;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Http\Resources\Json\ResourceCollection;
 
 /**
  * @mixin Author
@@ -23,7 +22,7 @@ final class AuthorRessource extends JsonResource
             'year_of_birth' => (int) $this->year_of_birth,
             'year_of_death' => (int) $this->year_of_death,
             'biography' => (string) $this->biography,
-            // TODO
+            // TODO 4 : Ajouter la liste des oeuvres de l’auteur dans le retour de l’API (n'hésitez pas à créer un nouvelle resource pour le retour des mangas et à l'utiliser ici)
         ];
     }
 }

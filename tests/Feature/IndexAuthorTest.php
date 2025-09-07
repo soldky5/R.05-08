@@ -12,25 +12,25 @@ class IndexAuthorTest extends TestCase
 
     public function test_list_author(): void
     {
-        // TODO
+        // TODO 1 : Écrire le test pour tester que la route qui liste les auteurs fonctionne
         $this->assertTrue(true);
     }
     
     public function test_list_author_with_specific_name(): void
     {
-        // TODO
+        // TODO 3 : Tester le filtre sur le nom de l'auteur
         $this->assertTrue(true);
     }
     
     public function test_list_author_with_those_mangas(): void
     {
-        // TODO
+        // TODO 5 : Tester que la route renvoie bien la liste des mangas des auteurs (les bons mangas doivent être liés aux bons auteurs)
         $this->assertTrue(true);
     }
     
     public function test_list_author_with_sort(): void
     {
-        // TODO
+        // TODO 7 : Tester le tri
         $this->assertTrue(true);
     }
 }
