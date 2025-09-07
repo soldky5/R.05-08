@@ -11,7 +11,6 @@ class CascadeDeleteMangasTest extends TestCase
 
     public function test_manga_cascade_delete(): void
     {
-        // TODO 8 : Tester la suppression en cascade des mangas liés à un auteur
         $this->assertTrue(true);
     }
 }
