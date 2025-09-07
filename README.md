@@ -44,10 +44,8 @@ php artisan test
 ```
 
 ### Dusk
-```
-# Run server
-php artisan serve --port=8000
+- Before run tests : `php artisan dusk:chrome-driver --detect`
 
-# Run tests
-php artisan dusk
-```
+- Run server : `php artisan serve --port=8000`
+
+- Run tests : `php artisan dusk`
