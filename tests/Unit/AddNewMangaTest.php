@@ -2,7 +2,6 @@
 
 namespace Tests\Unit;
 
-use App\Models\Author;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -12,14 +11,7 @@ class AddNewMangaTest extends TestCase
 
     public function test_add_new_manga(): void
     {
-        // TODO 10 : Correction
-        $author = Author::factory()->create();
-        $manga = [
-            'title' => 'test',
-            'start_year' => date('Y'),
-            'volume_number' => 2
-        ];
-        $author->addManga($manga);
-        $this->assertDatabaseHas('mangas', ['title' => 'test']);
+        // TODO 10 : Tester l'ajout d'un nouveau manga directement via l'auteur'
+        $this->assertTrue(true);
     }
 }
