@@ -1,3 +1,7 @@
-// TODO 8 : Écrire le configuration ici en mettant
-//    - un niveau 5
-//    - l'éxecution sur le dossier /app
+includes:
+    - ./vendor/larastan/larastan/extension.neon
+
+parameters:
+    level: 5
+    paths:
+        - app/Models
