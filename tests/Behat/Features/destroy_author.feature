@@ -1,1 +1,5 @@
-// TODO 1 : Écrire le scénario en utilisant Gherkin pour décrire la future feature
+Feature: Mangathèque
+    Scenario: Supprimer un auteur
+        Given j'ai sélectionner l'auteur à supprimer
+        When j’appuie sur l'icone de corbeille
+        Then l'auteur sélectionner est suprimé.
