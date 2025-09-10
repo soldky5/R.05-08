@@ -5,7 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class IndexAuthorTest extends TestCase
+class DestroyAuthorTest extends TestCase
 {
     use RefreshDatabase;
 
