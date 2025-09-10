@@ -3,7 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
         <title>Mangathèque</title>
     </head>
@@ -57,9 +60,14 @@
                 @if(count($authors) > 0)
                     <ul class="divide-y divide-gray-200">
                         @foreach($authors as $author)
-                        <li class="py-3">
-                            <p class="font-semibold">{{ $author->name }} <span class="text-sm text-gray-500">({{ $author->year_of_birth }})</span></p>
-                            <p class="text-gray-600 text-sm">{{ $author->biography }}</p>
+                        <li class="py-3 flex justify-between items-center">
+                            <div>
+                                <p class="font-semibold">{{ $author->name }} <span class="text-sm text-gray-500">({{ $author->year_of_birth }})</span></p>
+                                <p class="text-gray-600 text-sm">{{ $author->biography }}</p>
+                            </div>
+                            <div>
+                                <span class="fas fa-trash cursor-pointer" onclick="deleteAuthor({{ $author->id }})"></span>
+                            </div>
                         </li>
                         @endforeach
                     </ul>
@@ -69,4 +77,23 @@
             </div>
         </div>
     </body>
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        const deleteAuthor = (id) => {
+            if (!confirm('Supprimer cet auteur ?')) return;
+
+            $.ajax({
+                url: "/api/authors/" + id,
+                type: 'DELETE',
+                success: function (result) {
+                    location.reload();
+                },
+            });
+        };
+    </script>
 </html>
