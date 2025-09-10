@@ -35,6 +35,6 @@ final class AuthorController
 
     public function destroy()
     {
-        // TODO 3 : Étape GREEN du TDD
+        // TODO 3 : Étape GREEN, écrire le code pour que le test passe
     }
 }
