@@ -18,11 +18,13 @@
                     </p>
                 </div>
             @endif
-
             @if ($errors->any())
                 <div class="w-full bg-red-600 text-white text-center p-3 shadow-md">
                     <p class="text-sm font-medium">
-                    {{ session('error') }}
+                        {{$errors->first('name')}}
+                    </p>
+                    <p class="text-sm font-medium">
+                        {{$errors->first('year_of_birth')}}
                     </p>
                 </div>
             @endif
@@ -34,12 +36,12 @@
                 
                 <div>
                 <label class="block text-sm font-medium text-gray-600">Nom</label>
-                <input type="text" name="name" class="p-2 not-only:mt-1 w-full rounded-xl border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                <input type="text" name="name" class="p-2 not-only:mt-1 w-full rounded-xl border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500">
                 </div>
                 
                 <div>
                 <label class="block text-sm font-medium text-gray-600">Année de naissance</label>
-                <input type="number" name="year_of_birth" class="p-2 mt-1 w-full rounded-xl border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                <input type="number" name="year_of_birth" class="p-2 mt-1 w-full rounded-xl border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500">
                 </div>
                 
                 <div>
@@ -47,7 +49,7 @@
                 <textarea name="biography" rows="3" class="p-2 mt-1 w-full rounded-xl border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
                 </div>
                 
-                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-xl shadow hover:bg-blue-700 transition">Ajouter l'auteur</button>
+                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-xl shadow hover:bg-blue-700 transition">Créer</button>
             </form>
 
             <div class="bg-white shadow-md rounded-2xl p-6">
