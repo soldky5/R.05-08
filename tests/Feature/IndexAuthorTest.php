@@ -13,7 +13,6 @@ class IndexAuthorTest extends TestCase
 
     public function test_list_author(): void
     {
-        // TODO 1 : Correction
         $author = Author::factory()->create();
 
         $response = $this->getJson(route('authors.index'));
@@ -29,7 +28,6 @@ class IndexAuthorTest extends TestCase
     
     public function test_list_author_with_specific_name(): void
     {
-        // TODO 3 : Correction
         $author = Author::factory()->create();
         $author2 = Author::factory()->create();
 
@@ -47,7 +45,6 @@ class IndexAuthorTest extends TestCase
     
     public function test_list_author_with_those_mangas(): void
     {
-        // TODO 5 : Correction
         $author = Author::factory()->create();
         $manga = Manga::factory()->create([
             'author_id' => $author->id
@@ -74,7 +71,6 @@ class IndexAuthorTest extends TestCase
     
     public function test_list_author_with_sort(): void
     {
-        // TODO 7 : Correction
         $author = Author::factory()->create([
             'name' => 'b'
         ]);

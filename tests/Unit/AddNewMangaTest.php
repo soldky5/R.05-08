@@ -12,7 +12,6 @@ class AddNewMangaTest extends TestCase
 
     public function test_add_new_manga(): void
     {
-        // TODO 10 : Correction
         $author = Author::factory()->create();
         $manga = [
             'title' => 'test',

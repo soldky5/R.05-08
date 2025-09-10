@@ -12,7 +12,6 @@ class AuthorFormTest extends DuskTestCase
 
     public function testCanCreateAuthorThroughForm()
     {
-        // TODO 11 : Correction
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
                 ->assertSee('Aucun auteur trouvé')
@@ -35,7 +34,6 @@ class AuthorFormTest extends DuskTestCase
 
     public function testFormValidationErrors()
     {
-        // TODO 12 : Correction
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
                 ->press('Créer')
