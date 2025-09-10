@@ -33,8 +33,11 @@ final class AuthorController
         return redirect()->route('home')->with('success', 'Auteur créé avec succès !');
     }
 
-    public function destroy()
+    public function destroy(Author $author)
     {
-        // TODO 3 : Étape GREEN du TDD
+        // TODO 3 : Correction
+        $author->delete();
+
+        return response()->json(null, 204);
     }
 }
