@@ -18,11 +18,13 @@
                     </p>
                 </div>
             @endif
-
             @if ($errors->any())
                 <div class="w-full bg-red-600 text-white text-center p-3 shadow-md">
                     <p class="text-sm font-medium">
-                    {{ session('error') }}
+                        {{$errors->first('name')}}
+                    </p>
+                    <p class="text-sm font-medium">
+                        {{$errors->first('year_of_birth')}}
                     </p>
                 </div>
             @endif
