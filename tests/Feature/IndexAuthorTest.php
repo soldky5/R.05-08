@@ -22,10 +22,10 @@ class IndexAuthorTest extends TestCase
             'name' => $author->name,
             'year_of_birth' => $author->year_of_birth,
             'year_of_death' => $author->year_of_death,
-            'biography' => $author->biography
+            'biography' => $author->biography,
         ]]);
     }
-    
+
     public function test_list_author_with_specific_name(): void
     {
         $author = Author::factory()->create();
@@ -38,16 +38,16 @@ class IndexAuthorTest extends TestCase
             'name' => $author->name,
             'year_of_birth' => $author->year_of_birth,
             'year_of_death' => $author->year_of_death,
-            'biography' => $author->biography
+            'biography' => $author->biography,
         ]]);
         $this->assertFalse(collect($response->json())->contains(fn ($item) => $item['id'] === $author2->id));
     }
-    
+
     public function test_list_author_with_those_mangas(): void
     {
         $author = Author::factory()->create();
         $manga = Manga::factory()->create([
-            'author_id' => $author->id
+            'author_id' => $author->id,
         ]);
 
         $response = $this->getJson(route('authors.index'));
@@ -63,17 +63,17 @@ class IndexAuthorTest extends TestCase
                 'start_year' => $manga->start_year,
                 'end_year' => $manga->end_year,
                 'volume_number' => $manga->volume_number,
-            ]]
+            ]],
         ]]);
     }
-    
+
     public function test_list_author_with_sort(): void
     {
         $author = Author::factory()->create([
-            'name' => 'b'
+            'name' => 'b',
         ]);
         $author2 = Author::factory()->create([
-            'name' => 'a'
+            'name' => 'a',
         ]);
 
         $response = $this->getJson(route('authors.index'));

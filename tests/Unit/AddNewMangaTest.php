@@ -16,7 +16,7 @@ class AddNewMangaTest extends TestCase
         $manga = [
             'title' => 'test',
             'start_year' => date('Y'),
-            'volume_number' => 2
+            'volume_number' => 2,
         ];
         $author->addManga($manga);
         $this->assertDatabaseHas('mangas', ['title' => 'test']);

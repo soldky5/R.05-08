@@ -2,6 +2,4 @@
 
 namespace App\Http\Controllers;
 
-final class MangaController
-{
-}
+final class MangaController {}

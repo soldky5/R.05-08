@@ -10,7 +10,7 @@ class AuthorFormTest extends DuskTestCase
 {
     use DatabaseMigrations;
 
-    public function testCanCreateAuthorThroughForm()
+    public function test_can_create_author_through_form()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -28,11 +28,11 @@ class AuthorFormTest extends DuskTestCase
         $this->assertDatabaseHas('authors', [
             'name' => 'Masashi Kishimoto',
             'year_of_birth' => 1974,
-            'biography' => 'Mangaka, auteur de Naruto'
+            'biography' => 'Mangaka, auteur de Naruto',
         ]);
     }
 
-    public function testFormValidationErrors()
+    public function test_form_validation_errors()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')

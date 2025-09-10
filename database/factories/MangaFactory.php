@@ -21,14 +21,14 @@ final class MangaFactory extends Factory
             'start_year' => (int) date('Y') - 1,
             'end_year' => (int) date('Y'),
             'volume_number' => $this->faker->randomNumber(1),
-            'author_id' => null
+            'author_id' => null,
         ];
     }
 
     public function configure(): static
     {
         return $this->afterMaking(function (Manga $manga): void {
-            if (!$manga->author_id) {
+            if (! $manga->author_id) {
                 $manga->author()->associate(Author::factory()->create());
             }
         });

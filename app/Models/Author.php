@@ -14,7 +14,7 @@ final class Author extends Model
         'name',
         'year_of_birth',
         'year_of_death',
-        'biography'
+        'biography',
     ];
 
     /**

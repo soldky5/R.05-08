@@ -15,7 +15,7 @@ class CascadeDeleteMangasTest extends TestCase
     {
         $author = Author::factory()->create();
         $manga = Manga::factory()->create([
-            'author_id' => $author->id
+            'author_id' => $author->id,
         ]);
         $this->assertDatabaseHas($manga->getTable(), ['id' => $manga->id]);
         $author->delete();
