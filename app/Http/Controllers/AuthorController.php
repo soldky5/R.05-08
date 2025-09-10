@@ -32,4 +32,9 @@ final class AuthorController
         
         return redirect()->route('home')->with('success', 'Auteur créé avec succès !');
     }
+
+    public function destroy()
+    {
+        // TODO 3 : Étape GREEN du TDD
+    }
 }
