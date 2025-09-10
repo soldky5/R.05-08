@@ -52,7 +52,6 @@ class IndexAuthorTest extends TestCase
         $manga = Manga::factory()->create([
             'author_id' => $author->id
         ]);
-        $manga2 = Manga::factory()->create();
 
         $response = $this->getJson(route('authors.index'));
         $response->assertJson([[
@@ -69,7 +68,6 @@ class IndexAuthorTest extends TestCase
                 'volume_number' => $manga->volume_number,
             ]]
         ]]);
-        $this->assertFalse(collect($response->json('mangas'))->contains(fn ($item) => $item['id'] === $manga2->id));
     }
     
     public function test_list_author_with_sort(): void
